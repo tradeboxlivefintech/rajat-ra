@@ -3,7 +3,8 @@ import Header from "@/components/Layout/Header";
 import Footer from "@/components/Layout/Footer";
 import { userData } from "@/data/userData";
 import { useTheme } from "@/utils/theme";
-import { Target, Eye, Shield, Brain, BarChart3, TrendingUp, ChevronRight, Award, Globe, Target as TargetIcon } from "lucide-react";
+import { Target, Eye, Shield, Brain, BarChart3, TrendingUp, ChevronRight, Award, Globe, Target as TargetIcon, Mail, Phone, Linkedin } from "lucide-react";
+import Image from "next/image";
 
 export default function About() {
   const theme = useTheme();
@@ -94,7 +95,7 @@ export default function About() {
                     Our Leadership
                   </h3>
                   <p style={{ color: theme.lightText }}>
-                    {userData.analyst.name} is a Chartered Accountant by qualification, bringing a rare blend 
+                    {userData.analyst.name} is a Research Analyst by qualification, bringing a rare blend 
                     of financial expertise and practical market experience. His research-driven, disciplined 
                     approach focuses on capital protection, risk management, and sustainable returns, making 
                     him a trusted guide for investors navigating dynamic markets.
@@ -112,7 +113,237 @@ export default function About() {
           </div>
         </section>
 
-        {/* What We Focus On */}
+        
+        {/* Leadership & Qualifications with Photo */}
+        <section className="py-20">
+          <div className="container mx-auto px-4">
+            <div className="grid lg:grid-cols-2 gap-12 items-start">
+              {/* Left Column - Photo and Contact Info */}
+              <div className="space-y-8">
+                {/* Profile Card */}
+                <div 
+                  className="rounded-3xl overflow-hidden border"
+                  style={{
+                    backgroundColor: theme.background,
+                    borderColor: theme.borderColor,
+                    boxShadow: `0 20px 40px ${theme.primaryColor}08`,
+                  }}
+                >
+                  {/* Profile Image */}
+                  <div className="relative h-80 md:h-96 bg-gray-100">
+                    {/* Replace with your actual image */}
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <div className="relative w-64 h-64 rounded-full overflow-hidden border-4 border-white shadow-2xl">
+                        {/* Placeholder - Replace with your actual image */}
+                        <Image
+                          src="/client.png" // Placeholder image
+                          alt={userData.analyst.name}
+                          fill
+                          className="object-cover"
+                          sizes="(max-width: 768px) 100vw, 50vw"
+                          priority
+                        >
+
+                      </Image>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  {/* Profile Info */}
+                  <div className="p-8">
+                    <div className="text-center mb-6">
+                      <h2 
+                        className="text-2xl font-bold mb-2"
+                        style={{ color: theme.textColor }}
+                      >
+                        {userData.analyst.name}
+                      </h2>
+                      <p 
+                        className="text-lg font-medium mb-1"
+                        style={{ color: theme.primaryColor }}
+                      >
+                        SEBI Registered Research Analyst
+                      </p>
+                      <p style={{ color: theme.lightText }}>
+                         {userData.analyst.experience} Experience
+                      </p>
+                    </div>
+
+                    {/* Contact Information */}
+                    <div className="space-y-4">
+                      <div className="flex items-center gap-3">
+                        <div 
+                          className="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0"
+                          style={{ backgroundColor: `${theme.primaryColor}15` }}
+                        >
+                          <Mail className="w-4 h-4" style={{ color: theme.primaryColor }} />
+                        </div>
+                        <div>
+                          <p className="text-sm" style={{ color: theme.lightText }}>Email</p>
+                          <a 
+                            href={`mailto:${userData.contact.email}`}
+                            className="font-medium hover:underline"
+                            style={{ color: theme.textColor }}
+                          >
+                            {userData.contact.email}
+                          </a>
+                        </div>
+                      </div>
+
+                      <div className="flex items-center gap-3">
+                        <div 
+                          className="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0"
+                          style={{ backgroundColor: `${theme.primaryColor}15` }}
+                        >
+                          <Phone className="w-4 h-4" style={{ color: theme.primaryColor }} />
+                        </div>
+                        <div>
+                          <p className="text-sm" style={{ color: theme.lightText }}>Phone</p>
+                          <a 
+                            href={`tel:${userData.contact.phone}`}
+                            className="font-medium hover:underline"
+                            style={{ color: theme.textColor }}
+                          >
+                            {userData.contact.phone}
+                          </a>
+                        </div>
+                      </div>
+
+                      {/* Social Links */}
+                      <div className="flex gap-3 justify-center pt-4">
+                        <a 
+                          href={userData.social.linkedin}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="w-10 h-10 rounded-full flex items-center justify-center hover:opacity-80 transition-opacity"
+                          style={{ backgroundColor: `${theme.primaryColor}15` }}
+                        >
+                          <Linkedin className="w-5 h-5" style={{ color: theme.primaryColor }} />
+                        </a>
+                        {/* Add more social links as needed */}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* SEBI Badge */}
+                
+              </div>
+              
+              {/* Right Column - Qualifications and Details */}
+              <div className="space-y-8">
+                <div>
+                  <div className="mb-4">
+                    <span 
+                      className="text-sm font-semibold uppercase tracking-wider"
+                      style={{ color: theme.primaryColor }}
+                    >
+                      Professional Qualifications
+                    </span>
+                  </div>
+                  
+                  <div className="space-y-6">
+                    {[
+                      {
+                        title: "SEBI Registered Research Analyst",
+                        description: "Authorized to provide investment advice and research reports. Registration validated and compliant with SEBI regulations.",
+                        icon: <Award className="w-5 h-5" />
+                      },
+                      {
+                        title: "Market Experience",
+                        description: `Over ${userData.analyst.experience} of hands-on experience across Equity, Futures & Options, Currency, and Commodity markets.`,
+                        icon: <TrendingUp className="w-5 h-5" />
+                      },
+                      {
+                        title: "Research Methodology",
+                        description: "Proven research-driven approach focusing on fundamental analysis, technical analysis, and risk management.",
+                        icon: <BarChart3 className="w-5 h-5" />
+                      }
+                    ].map((item, index) => (
+                      <div key={index} className="flex gap-4">
+                        <div className="flex-shrink-0">
+                          <div 
+                            className="w-12 h-12 rounded-xl flex items-center justify-center"
+                            style={{ 
+                              backgroundColor: `${theme.primaryColor}15`,
+                              border: `1px solid ${theme.primaryColor}30`,
+                            }}
+                          >
+                            <div style={{ color: theme.primaryColor }}>
+                              {item.icon}
+                            </div>
+                          </div>
+                        </div>
+                        <div>
+                          <h3 
+                            className="text-lg font-semibold mb-2"
+                            style={{ color: theme.textColor }}
+                          >
+                            {item.title}
+                          </h3>
+                          <p style={{ color: theme.lightText }}>{item.description}</p>
+                        </div>
+                      </div>
+                    ))}
+                    
+                  </div>
+                </div>
+
+                {/* Expertise Areas */}
+                <div className="pt-8 border-t" style={{ borderColor: theme.borderColor }}>
+                  <h3 
+                    className="text-xl font-bold mb-6"
+                    style={{ color: theme.textColor }}
+                  >
+                    Areas of Expertise
+                  </h3>
+                  <div className="grid grid-cols-2 gap-3">
+                    {[
+                      "Equity Research",
+                      "Portfolio Management",
+                      "Risk Assessment",
+                      "Technical Analysis",
+                      "Fundamental Analysis",
+                      "Wealth Planning",
+                      "Tax Planning",
+                      "Retirement Planning"
+                    ].map((skill, index) => (
+                      <div 
+                        key={index}
+                        className="px-4 py-2 rounded-full text-sm font-medium"
+                        style={{
+                          backgroundColor: `${theme.primaryColor}08`,
+                          border: `1px solid ${theme.primaryColor}20`,
+                          color: theme.primaryColor,
+                        }}
+                      >
+                        {skill}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                <div 
+                  className="rounded-2xl p-6 text-center border"
+                  style={{
+                    backgroundColor: `${theme.primaryColor}08`,
+                    borderColor: `${theme.primaryColor}30`,
+                  }}
+                >
+                  <div className="flex items-center justify-center gap-3 mb-3">
+                    <Shield className="w-6 h-6" style={{ color: theme.primaryColor }} />
+                    <span className="font-bold" style={{ color: theme.textColor }}>SEBI Registered</span>
+                  </div>
+                  <p className="text-sm" style={{ color: theme.lightText }}>
+                    Registration No: {userData.regNumber}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+{/* What We Focus On */}
         <section className="py-20">
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">
@@ -180,116 +411,6 @@ export default function About() {
                   <p style={{ color: theme.lightText }}>{item.description}</p>
                 </div>
               ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Leadership & Qualifications */}
-        <section className="py-20">
-          <div className="container mx-auto px-4">
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
-              <div>
-                <div className="mb-4">
-                  <span 
-                    className="text-sm font-semibold uppercase tracking-wider"
-                    style={{ color: theme.primaryColor }}
-                  >
-                    Leadership
-                  </span>
-                </div>
-                <h2 
-                  className="text-3xl font-bold mb-8"
-                  style={{ color: theme.textColor }}
-                >
-                  {userData.analyst.name}
-                </h2>
-                
-                <div className="space-y-8">
-                  {[
-                    {
-                      statement: "SEBI Registered Research Analyst",
-                      description: "Registration No: INH000021508"
-                    },
-                    {
-                      statement: "Chartered Accountant (CA)",
-                      description: "Professional financial qualification"
-                    },
-                    {
-                      statement: "8+ Years Market Experience",
-                      description: "Across Equity, F&O, Currency, and Commodity markets"
-                    },
-                    {
-                      statement: "Research-Driven Approach",
-                      description: "Focus on capital protection and sustainable returns"
-                    }
-                  ].map((item, index) => (
-                    <div key={index} className="flex gap-4">
-                      <div className="flex-shrink-0">
-                        <div 
-                          className="w-10 h-10 rounded-full flex items-center justify-center"
-                          style={{ backgroundColor: `${theme.primaryColor}15` }}
-                        >
-                          <Award className="w-5 h-5" style={{ color: theme.primaryColor }} />
-                        </div>
-                      </div>
-                      <div>
-                        <h3 
-                          className="text-lg font-semibold mb-2"
-                          style={{ color: theme.textColor }}
-                        >
-                          {item.statement}
-                        </h3>
-                        <p style={{ color: theme.lightText }}>{item.description}</p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-              
-              <div className="relative">
-                <div 
-                  className="rounded-3xl p-12 border-2"
-                  style={{
-                    backgroundColor: `${theme.primaryColor}08`,
-                    borderColor: `${theme.primaryColor}30`,
-                  }}
-                >
-                  <div className="text-center">
-                    <div 
-                      className="w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6"
-                      style={{
-                        backgroundColor: `${theme.primaryColor}15`,
-                        border: `2px solid ${theme.primaryColor}30`,
-                      }}
-                    >
-                      <Globe className="w-10 h-10" style={{ color: theme.primaryColor }} />
-                    </div>
-                    <h3 
-                      className="text-2xl font-bold mb-6"
-                      style={{ color: theme.textColor }}
-                    >
-                      Our Commitment to Clients
-                    </h3>
-                    <div className="space-y-4">
-                      <p style={{ color: theme.lightText }}>Personalized investment solutions</p>
-                      <p style={{ color: theme.lightText }}>Transparent communication and reporting</p>
-                      <p style={{ color: theme.lightText }}>Focus on long-term wealth creation</p>
-                      <p style={{ color: theme.lightText }}>Regular portfolio reviews and adjustments</p>
-                    </div>
-                  </div>
-                </div>
-                <div 
-                  className="absolute -top-4 -right-4 px-6 py-3 rounded-xl"
-                  style={{
-                    background: `linear-gradient(135deg, ${theme.primaryColor} 0%, ${theme.secondaryColor} 100%)`,
-                    color: "white",
-                    boxShadow: `0 4px 20px ${theme.primaryColor}40`,
-                  }}
-                >
-                  <p className="font-bold">SEBI Registered</p>
-                  <p className="text-sm opacity-90">{userData.regNumber}</p>
-                </div>
-              </div>
             </div>
           </div>
         </section>

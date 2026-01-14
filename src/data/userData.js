@@ -9,9 +9,9 @@ export const userData = {
   
   // Contact Information
   contact: {
-    phone: "+91 0000000000",
-    whatsapp: "+91 0000000000",
-    email: "Rajat27bisht@gmail.com",
+    phone: "+91 9968119797",
+    whatsapp: "+91 9968119797",
+    email: "rajat27bisht@gmail.com",
     address: {
       line1: "B-5505, Street No 115/18",
       line2: "sant nagar burari",
@@ -38,29 +38,7 @@ export const userData = {
   },
   
   // Team Members
-  team: [
-    {
-      name: "Priya Sharma",
-      role: "Compliance Officer",
-      qualification: "LLB, CS",
-      experience: "10+ years",
-      email: "compliance@tradelogywealth.com"
-    },
-    {
-      name: "Arun Mehta",
-      role: "Technical Analyst",
-      qualification: "CFA Level III, M.Tech",
-      experience: "6+ years",
-      email: "technical@tradelogywealth.com"
-    },
-    {
-      name: "Neha Patel",
-      role: "Client Relations",
-      qualification: "MBA Marketing",
-      experience: "5+ years",
-      email: "relations@tradelogywealth.com"
-    }
-  ],
+  
   
   // Services
   services: [
@@ -144,15 +122,15 @@ export const userData = {
   // Compliance Information
   compliance: {
     officer: {
-      name: "Rajat Bisht",
-      email: "abc@gmail.com",
-      phone: "+91 0000000000"
+      name: "Gopal Singh",
+      email: "gopal12singhbisht@gmail.com",
+      phone: "+91 9013394300"
     },
-    grievance: {
-      name: "Arun Mehta",
-      email: "grievance@tradelogywealth.com",
-      phone: "+91 9691536857"
-    },
+    // grievance: {
+    //   name: "Arun Mehta",
+    //   email: "grievance@tradelogywealth.com",
+    //   phone: "+91 9691536857"
+    // },
     disclosures: [
       "We do not deal in securities or provide portfolio management services",
       "We do not have any disciplinary history with SEBI",

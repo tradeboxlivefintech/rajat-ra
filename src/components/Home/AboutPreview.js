@@ -99,7 +99,7 @@ const AboutPreview = () => {
                       className="font-semibold mb-2"
                       style={{ color: theme.textColor }}
                     >
-                      Chartered Accountant Expertise
+                      Research Analyst Expertise
                     </h4>
                     <p style={{ color: theme.lightText }}>
                       Blending financial expertise with practical market experience for 

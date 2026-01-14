@@ -148,7 +148,7 @@ export default function Compliance() {
                   </div>
                   
                   {/* Grievance Officer */}
-                  <div>
+                  {/* <div>
                     <h4 
                       className="font-semibold mb-2"
                       style={{ color: theme.textColor }}
@@ -158,7 +158,7 @@ export default function Compliance() {
                     <p style={{ color: theme.textColor }}>{userData.compliance.grievance.name}</p>
                     <p className="text-sm" style={{ color: theme.lightText }}>Email: {userData.compliance.grievance.email}</p>
                     <p className="text-sm" style={{ color: theme.lightText }}>Phone: {userData.compliance.grievance.phone}</p>
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </div>
@@ -279,27 +279,7 @@ export default function Compliance() {
                     In case of any grievance or complaint, please contact our Grievance Officer:
                   </p>
                   
-                  <div 
-                    className="p-4 rounded-lg border"
-                    style={{
-                      backgroundColor: `${theme.primaryColor}08`,
-                      borderColor: theme.borderColor,
-                    }}
-                  >
-                    <p 
-                      className="font-semibold"
-                      style={{ color: theme.textColor }}
-                    >
-                      {userData.compliance.grievance.name}
-                    </p>
-                    <p className="text-sm" style={{ color: theme.lightText }}>
-                      Email: {userData.compliance.grievance.email}
-                    </p>
-                    <p className="text-sm" style={{ color: theme.lightText }}>
-                      Phone: {userData.compliance.grievance.phone}
-                    </p>
-                  </div>
-                  
+                 
                   <p className="text-sm" style={{ color: theme.lightText }}>
                     We strive to resolve all grievances within 30 days of receipt.
                   </p>

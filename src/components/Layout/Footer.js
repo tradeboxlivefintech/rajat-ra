@@ -250,7 +250,7 @@ const Footer = () => {
               className="font-semibold px-3 py-1 rounded-md"
               style={{ 
                 color: theme.secondaryColor,
-                backgroundColor: `${theme.background}10`,
+                backgroundColor: "yellow",
               }}
             >
               Crafted By TradeBox
