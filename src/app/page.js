@@ -8,6 +8,7 @@ import Stats from "@/components/Home/Stats";
 import Testimonials from "@/components/Home/Testimonials";
 import CTASection from "@/components/Home/CTASection";
 import { userData } from "@/data/userData";
+import ServicesGrid from "@/components/Home/ServicesGrid";
 
 export default function Home() {
   return (
@@ -17,8 +18,9 @@ export default function Home() {
         <Hero />
         <Stats />
         <AboutPreview />
-        <ServicesPreview />
+        <ServicesGrid/>
         <ResearchHighlights />
+        <ServicesPreview />
         <Testimonials />
         <CTASection />
       </main>

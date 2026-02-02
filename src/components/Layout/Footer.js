@@ -4,7 +4,7 @@ import { userData } from "@/data/userData";
 import Image from 'next/image';
 import { Phone, Mail, MapPin } from "lucide-react";
 import { useTheme } from "@/utils/theme";
-
+import { Instagram } from 'lucide-react';
 const Footer = () => {
   const currentYear = new Date().getFullYear();
   const theme = useTheme();

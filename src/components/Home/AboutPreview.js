@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { userData } from "@/data/userData";
 import { useTheme } from "@/utils/theme";
-import { Target, Brain, Shield, TrendingUp, ArrowRight, Award, Target as TargetIcon, BookOpen } from "lucide-react";
+import { Target, Brain, Shield, TrendingUp, ArrowRight, Award, Target as TargetIcon, BookOpen, FileText } from "lucide-react";
 
 const AboutPreview = () => {
   const theme = useTheme();
@@ -12,7 +12,7 @@ const AboutPreview = () => {
     <section 
       className="relative py-20 overflow-hidden"
       style={{ background: theme.backgroundGradient }}
-    >
+    > 
       {/* Background elements */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-current to-transparent" />
@@ -36,17 +36,17 @@ const AboutPreview = () => {
             className="text-3xl lg:text-4xl font-bold mb-6"
             style={{ color: theme.textColor }}
           >
-            Research-Driven{" "}
+            Institutional-Quality{" "}
             <span style={{ color: theme.primaryColor }}>
-              Wealth Management
+              Research & Analysis
             </span>
           </h2>
           <p 
             className="max-w-3xl mx-auto text-lg"
             style={{ color: theme.lightText }}
           >
-            {userData.companyName} combines financial expertise with practical market experience 
-            to help investors build sustainable long-term wealth through disciplined investing.
+            {userData.companyName} delivers institutional-quality research to Indian investors through 
+            deep fundamental analysis combined with price-trend validation (techno-funda).
           </p>
         </div>
 
@@ -75,13 +75,13 @@ const AboutPreview = () => {
                     className="text-2xl font-bold"
                     style={{ color: theme.textColor }}
                   >
-                    Led by {userData.analyst.name}
+                    Led by CA {userData.analyst.name}
                   </h3>
                   <p 
                     className="text-sm mt-1"
                     style={{ color: theme.lightText }}
                   >
-                    SEBI Registration No: {userData.regNumber}
+                    Chartered Accountant & SEBI Reg. No: {userData.regNumber}
                   </p>
                 </div>
               </div>
@@ -92,17 +92,17 @@ const AboutPreview = () => {
                     className="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0 mt-1"
                     style={{ backgroundColor: `${theme.primaryColor}15` }}
                   >
-                    <Brain className="w-5 h-5" style={{ color: theme.primaryColor }} />
+                    <FileText className="w-5 h-5" style={{ color: theme.primaryColor }} />
                   </div>
                   <div>
                     <h4 
                       className="font-semibold mb-2"
                       style={{ color: theme.textColor }}
                     >
-                      Research Analyst Expertise
+                      Chartered Accountant + Research Analyst
                     </h4>
                     <p style={{ color: theme.lightText }}>
-                      Blending financial expertise with practical market experience for 
+                      A rare blend of financial expertise and practical market experience for 
                       research-driven investment decisions focused on capital protection.
                     </p>
                   </div>
@@ -120,11 +120,11 @@ const AboutPreview = () => {
                       className="font-semibold mb-2"
                       style={{ color: theme.textColor }}
                     >
-                      {userData.analyst.experience} Market Experience
+                      Techno-Funda Approach
                     </h4>
                     <p style={{ color: theme.lightText }}>
-                      Comprehensive experience across Equity, Futures & Options, 
-                      Currency, and Commodity markets for well-rounded market understanding.
+                      Deep fundamental analysis combined with price-trend validation to create 
+                      high-conviction investment baskets for sustainable returns.
                     </p>
                   </div>
                 </div>
@@ -141,11 +141,11 @@ const AboutPreview = () => {
                       className="font-semibold mb-2"
                       style={{ color: theme.textColor }}
                     >
-                      Risk-First Approach
+                      Risk-First Mindset
                     </h4>
                     <p style={{ color: theme.lightText }}>
-                      Capital protection as the primary objective, with all strategies 
-                      structured around appropriate risk controls and sustainable returns.
+                      Risk is evaluated before return in every investment decision, making 
+                      compounding a repeatable process rather than a hopeful promise.
                     </p>
                   </div>
                 </div>
@@ -166,29 +166,29 @@ const AboutPreview = () => {
                 className="text-2xl font-bold mb-6"
                 style={{ color: theme.textColor }}
               >
-                Our Investment Philosophy
+                Our Research Focus
               </h3>
               <ul className="space-y-4">
                 {[
                   {
-                    text: "Goal-Based Wealth Management",
-                    subtext: "Personalized solutions based on your financial objectives"
+                    text: "High-Conviction Investment Baskets",
+                    subtext: "Thoroughly researched and documented recommendations"
                   },
                   {
-                    text: "Research-Driven Decision Making",
-                    subtext: "All investments backed by thorough analysis and research"
+                    text: "Under-Researched Companies",
+                    subtext: "Focus on overlooked opportunities with strong fundamentals"
                   },
                   {
-                    text: "Focus on Capital Protection",
-                    subtext: "Risk management as the foundation of all strategies"
+                    text: "Strengthening Earnings & Scalable Models",
+                    subtext: "Companies with robust balance sheets and growth potential"
                   },
                   {
-                    text: "Disciplined, Logical Investing",
-                    subtext: "Systematic approach avoiding emotional decisions"
+                    text: "Data-Driven, Emotion-Free Decisions",
+                    subtext: "Investment decisions guided by discipline, not emotion"
                   },
                   {
-                    text: "Sustainable Long-Term Growth",
-                    subtext: "Building wealth through steady, responsible investing"
+                    text: "Complete Transparency & Timely Reviews",
+                    subtext: "Making compounding a repeatable process"
                   },
                 ].map((item, i) => (
                   <li key={i} className="flex items-start gap-3">
@@ -227,8 +227,8 @@ const AboutPreview = () => {
                 }}
               >
                 <div className="text-left">
-                  <div className="text-sm opacity-90">Discover Our Approach</div>
-                  <div className="text-xl">Sustainable Wealth Creation</div>
+                  <div className="text-sm opacity-90">Discover Our Research Process</div>
+                  <div className="text-xl">Institutional-Quality Analysis</div>
                 </div>
                 <div 
                   className="w-12 h-12 rounded-xl flex items-center justify-center transition-all"
@@ -247,8 +247,8 @@ const AboutPreview = () => {
                     className="font-semibold"
                     style={{ color: theme.textColor }}
                   >
-                    Our Commitment:
-                  </span> Whether markets are volatile or stable, our objective remains the same — capital protection, steady growth, and transparency.
+                    Member of ICAI since 2024:
+                  </span> Combining Chartered Accountancy expertise with SEBI Research Analyst certification for comprehensive financial analysis.
                 </p>
               </div>
             </div>
@@ -268,8 +268,9 @@ const AboutPreview = () => {
               className="text-xl italic"
               style={{ color: theme.textColor }}
             >
-              Wealth is built through discipline, patience, and informed decisions — not shortcuts. 
-              {userData.companyName} guides investors toward sustainable financial growth.
+              Wealth is built through discipline, data-driven decisions, and focusing on 
+              under-researched opportunities — not following the crowd. {userData.companyName} 
+              makes institutional-quality research accessible to every investor.
             </p>
             <div 
               className="h-1 w-24 rounded-full mx-auto mt-6"

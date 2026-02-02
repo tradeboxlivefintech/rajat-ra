@@ -2,7 +2,7 @@ import Header from "@/components/Layout/Header";
 import Footer from "@/components/Layout/Footer";
 import { userData } from "@/data/userData";
 import { useTheme } from "@/utils/theme";
-import { FileText, BarChart3, TrendingUp, Shield, Scale, DollarSign, Target } from "lucide-react";
+import { FileText, BarChart3, TrendingUp, Shield, Scale, DollarSign, Target, Search, Monitor, AlertTriangle, CheckCircle, Eye, ChartBar, Filter, TrendingUp as TrendingUpIcon, TrendingDown } from "lucide-react";
 
 export default function Research() {
   const theme = useTheme();
@@ -38,13 +38,33 @@ export default function Research() {
                 className="text-xl max-w-3xl mx-auto"
                 style={{ color: theme.lightText }}
               >
-                Professional equity research backed by comprehensive analysis and SEBI compliance
+                A structured, research-driven approach combining fundamental analysis, technical validation, and risk assessment
               </p>
             </div>
           </div>
         </section>
 
-        {/* Research Methodology */}
+        {/* Research Process Overview */}
+        <section className="py-20">
+          <div className="container mx-auto px-4">
+            <div 
+              className="rounded-2xl p-8 border max-w-4xl mx-auto"
+              style={{
+                backgroundColor: `${theme.primaryColor}08`,
+                borderColor: `${theme.primaryColor}30`,
+                borderLeft: `4px solid ${theme.primaryColor}`,
+              }}
+            >
+              <p className="text-lg" style={{ color: theme.textColor }}>
+                {userData.companyName} follows a structured, research-driven approach combining fundamental analysis, 
+                technical validation, and risk assessment. Our research is prepared in compliance with SEBI (Research Analyst) 
+                Regulations and is purely informational, with no execution, PMS, or discretionary portfolio management.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Research Methodology Steps */}
         <section className="py-20">
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">
@@ -52,43 +72,52 @@ export default function Research() {
                 className="text-3xl font-bold mb-4"
                 style={{ color: theme.textColor }}
               >
-                Our Research Approach
+                Our Research Process
               </h2>
+              <p 
+                className="max-w-2xl mx-auto"
+                style={{ color: theme.lightText }}
+              >
+                A systematic approach to identifying and evaluating investment opportunities
+              </p>
             </div>
 
             <div className="grid md:grid-cols-3 gap-8 mb-12">
               {[
                 {
-                  title: "Fundamental Analysis",
-                  icon: <FileText className="w-8 h-8" />,
+                  title: "1. Idea Generation",
+                  subtitle: "Business & Sector Screening",
+                  icon: <Search className="w-8 h-8" />,
+                  description: "We identify investment ideas through comprehensive business and sector screening processes",
                   items: [
-                    "Financial Statement Analysis",
-                    "Ratio Analysis (Profitability, Liquidity)",
-                    "DCF Valuation Models",
-                    "Peer Comparison",
-                    "Management Quality Assessment"
+                    "Industry trend analysis",
+                    "Market opportunity assessment",
+                    "Competitive landscape mapping",
+                    "Macro-economic factor consideration"
                   ]
                 },
                 {
-                  title: "Technical Analysis",
+                  title: "2. Fundamental Evaluation",
+                  subtitle: "Company Assessment",
                   icon: <BarChart3 className="w-8 h-8" />,
+                  description: "Evaluate companies on earnings quality, balance sheet strength, scalability, and governance",
                   items: [
-                    "Trend Analysis",
-                    "Support & Resistance Levels",
-                    "Moving Averages",
-                    "Volume Analysis",
-                    "Momentum Indicators"
+                    "Earnings quality analysis",
+                    "Balance sheet strength assessment",
+                    "Scalability potential evaluation",
+                    "Corporate governance review"
                   ]
                 },
                 {
-                  title: "Qualitative Analysis",
-                  icon: <TrendingUp className="w-8 h-8" />,
+                  title: "3. Technical Validation",
+                  subtitle: "Price Trend Analysis",
+                  icon: <ChartBar className="w-8 h-8" />,
+                  description: "Validate views using price trends, momentum, and volume analysis",
                   items: [
-                    "Industry Analysis",
-                    "Competitive Positioning",
-                    "Regulatory Environment",
-                    "ESG Factors",
-                    "Management Evaluation"
+                    "Trend analysis and confirmation",
+                    "Momentum indicator assessment",
+                    "Volume pattern analysis",
+                    "Support/resistance identification"
                   ]
                 }
               ].map((method, index) => (
@@ -111,11 +140,21 @@ export default function Research() {
                   </div>
                   
                   <h3 
-                    className="text-xl font-bold mb-6"
+                    className="text-xl font-bold mb-2"
                     style={{ color: theme.textColor }}
                   >
                     {method.title}
                   </h3>
+                  <p 
+                    className="text-sm font-medium mb-4"
+                    style={{ color: theme.primaryColor }}
+                  >
+                    {method.subtitle}
+                  </p>
+                  
+                  <p className="mb-6" style={{ color: theme.lightText }}>
+                    {method.description}
+                  </p>
                   
                   <ul className="space-y-3">
                     {method.items.map((item, i) => (
@@ -134,7 +173,121 @@ export default function Research() {
           </div>
         </section>
 
-        {/* Sample Reports */}
+        {/* Risk Management Section */}
+        <section className="py-20">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-12">
+              <h2 
+                className="text-3xl font-bold mb-4"
+                style={{ color: theme.textColor }}
+              >
+                Risk Management Framework
+              </h2>
+              <p 
+                className="max-w-2xl mx-auto"
+                style={{ color: theme.lightText }}
+              >
+                Proactive risk assessment integrated throughout our research process
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+              <div className="space-y-6">
+                {[
+                  {
+                    title: "4. Risk Identification",
+                    description: "All risks are identified upfront before any investment decision",
+                    icon: <AlertTriangle className="w-6 h-6" />,
+                    color: theme.primaryColor
+                  },
+                  {
+                    title: "5. Position Sizing",
+                    description: "Positions are indicatively sized based on risk-reward parameters",
+                    icon: <Filter className="w-6 h-6" />,
+                    color: theme.secondaryColor
+                  },
+                  {
+                    title: "6. Continuous Monitoring",
+                    description: "Ideas are continuously monitored for changes in fundamentals, market conditions, and risk-reward dynamics",
+                    icon: <Monitor className="w-6 h-6" />,
+                    color: theme.accentColor
+                  }
+                ].map((step, index) => (
+                  <div 
+                    key={index} 
+                    className="flex items-start gap-4 p-6 rounded-xl border"
+                    style={{
+                      backgroundColor: `${step.color}08`,
+                      borderColor: `${step.color}30`,
+                    }}
+                  >
+                    <div 
+                      className="w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0"
+                      style={{ backgroundColor: `${step.color}15` }}
+                    >
+                      <div style={{ color: step.color }}>
+                        {step.icon}
+                      </div>
+                    </div>
+                    <div>
+                      <h3 
+                        className="text-lg font-semibold mb-2"
+                        style={{ color: theme.textColor }}
+                      >
+                        {step.title}
+                      </h3>
+                      <p style={{ color: theme.lightText }}>{step.description}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              <div 
+                className="rounded-2xl p-8 border"
+                style={{
+                  backgroundColor: theme.background,
+                  borderColor: theme.borderColor,
+                  boxShadow: `0 4px 30px ${theme.primaryColor}08`,
+                }}
+              >
+                <div className="flex items-center gap-3 mb-6">
+                  <div 
+                    className="w-12 h-12 rounded-xl flex items-center justify-center"
+                    style={{ backgroundColor: `${theme.primaryColor}15` }}
+                  >
+                    <Shield className="w-6 h-6" style={{ color: theme.primaryColor }} />
+                  </div>
+                  <div>
+                    <h3 
+                      className="text-xl font-bold"
+                      style={{ color: theme.textColor }}
+                    >
+                      Key Risk Parameters
+                    </h3>
+                  </div>
+                </div>
+                
+                <div className="space-y-4">
+                  {[
+                    "Market risk assessment",
+                    "Liquidity risk evaluation",
+                    "Company-specific risk factors",
+                    "Sector-specific challenges",
+                    "Regulatory risk consideration",
+                    "Macro-economic risk analysis"
+                  ].map((item, index) => (
+                    <div key={index} className="flex items-center gap-3">
+                      <CheckCircle className="w-5 h-5" style={{ color: theme.primaryColor }} />
+                      <span style={{ color: theme.lightText }}>{item}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Sample Research Reports */}
         <section className="py-20">
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">
@@ -158,22 +311,25 @@ export default function Research() {
                   title: "Technology Sector Analysis",
                   sector: "Information Technology",
                   recommendation: "BUY",
-                  date: "Feb 2024",
-                  features: ["DCF Valuation", "Peer Comparison", "Growth Analysis"]
+                  date: "March 2024",
+                  features: ["Deep Fundamental Analysis", "Valuation Modeling", "Growth Outlook"],
+                  trend: "positive"
                 },
                 {
                   title: "Banking Sector Review",
                   sector: "Banking & Financial Services",
-                  recommendation: "HOLD",
-                  date: "Jan 2024",
-                  features: ["NPA Analysis", "Margin Trends", "Regulatory Impact"]
+                  recommendation: "ACCUMULATE",
+                  date: "February 2024",
+                  features: ["NPA Trend Analysis", "Margin Assessment", "Digital Transformation"],
+                  trend: "neutral"
                 },
                 {
                   title: "Pharma Sector Outlook",
                   sector: "Pharmaceuticals",
-                  recommendation: "ACCUMULATE",
-                  date: "Dec 2023",
-                  features: ["Pipeline Analysis", "Export Trends", "Regulatory Updates"]
+                  recommendation: "BUY",
+                  date: "January 2024",
+                  features: ["Pipeline Analysis", "Export Market Study", "Regulatory Review"],
+                  trend: "positive"
                 }
               ].map((report, index) => (
                 <div 
@@ -195,28 +351,36 @@ export default function Research() {
                       </h3>
                       <p className="text-sm" style={{ color: theme.lightText }}>{report.sector}</p>
                     </div>
-                    <span 
-                      className="px-3 py-1 rounded-full text-sm font-medium"
-                      style={{
-                        backgroundColor: report.recommendation === "BUY" 
-                          ? `${theme.primaryColor}15`
-                          : report.recommendation === "HOLD"
-                          ? `${theme.secondaryColor}15`
-                          : `${theme.accentColor}15`,
-                        color: report.recommendation === "BUY" 
-                          ? theme.primaryColor
-                          : report.recommendation === "HOLD"
-                          ? theme.secondaryColor
-                          : theme.accentColor,
-                        border: report.recommendation === "BUY" 
-                          ? `1px solid ${theme.primaryColor}30`
-                          : report.recommendation === "HOLD"
-                          ? `1px solid ${theme.secondaryColor}30`
-                          : `1px solid ${theme.accentColor}30`,
-                      }}
-                    >
-                      {report.recommendation}
-                    </span>
+                    <div className="flex items-center gap-2">
+                      {report.trend === "positive" && (
+                        <TrendingUpIcon className="w-4 h-4" style={{ color: theme.primaryColor }} />
+                      )}
+                      {report.trend === "neutral" && (
+                        <TrendingUpIcon className="w-4 h-4" style={{ color: theme.secondaryColor }} />
+                      )}
+                      <span 
+                        className="px-3 py-1 rounded-full text-sm font-medium"
+                        style={{
+                          backgroundColor: report.recommendation === "BUY" 
+                            ? `${theme.primaryColor}15`
+                            : report.recommendation === "ACCUMULATE"
+                            ? `${theme.secondaryColor}15`
+                            : `${theme.accentColor}15`,
+                          color: report.recommendation === "BUY" 
+                            ? theme.primaryColor
+                            : report.recommendation === "ACCUMULATE"
+                            ? theme.secondaryColor
+                            : theme.accentColor,
+                          border: report.recommendation === "BUY" 
+                            ? `1px solid ${theme.primaryColor}30`
+                            : report.recommendation === "ACCUMULATE"
+                            ? `1px solid ${theme.secondaryColor}30`
+                            : `1px solid ${theme.accentColor}30`,
+                        }}
+                      >
+                        {report.recommendation}
+                      </span>
+                    </div>
                   </div>
                   
                   <div className="mb-6">
@@ -303,9 +467,9 @@ export default function Research() {
                     icon: <Shield className="w-6 h-6" />
                   },
                   {
-                    title: "Compensation",
-                    description: "We receive compensation only from clients for research services, not from companies being researched.",
-                    icon: <DollarSign className="w-6 h-6" />
+                    title: "Service Scope",
+                    description: "Our research is purely informational, with no execution, PMS, or discretionary portfolio management services.",
+                    icon: <Eye className="w-6 h-6" />
                   }
                 ].map((disclosure, index) => (
                   <div 
@@ -337,8 +501,6 @@ export default function Research() {
             </div>
           </div>
         </section>
-
-       
       </main>
       <Footer />
     </>

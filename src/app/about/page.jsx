@@ -3,7 +3,7 @@ import Header from "@/components/Layout/Header";
 import Footer from "@/components/Layout/Footer";
 import { userData } from "@/data/userData";
 import { useTheme } from "@/utils/theme";
-import { Target, Eye, Shield, Brain, BarChart3, TrendingUp, ChevronRight, Award, Globe, Target as TargetIcon, Mail, Phone, Linkedin } from "lucide-react";
+import { Target, Eye, Shield, Brain, BarChart3, TrendingUp, ChevronRight, Award, Globe, Target as TargetIcon, Mail, Phone, Linkedin, BookOpen, FileText } from "lucide-react";
 import Image from "next/image";
 
 export default function About() {
@@ -40,7 +40,7 @@ export default function About() {
                 className="text-xl"
                 style={{ color: theme.lightText }}
               >
-                A research-driven wealth management firm committed to sustainable long-term wealth building
+                {userData.companyName} (Managed by CA Rajat Bisht a SEBI-registered Research Analyst - {userData.regNumber}) built to deliver institutional-quality research to Indian investors.
               </p>
             </div>
           </div>
@@ -70,14 +70,11 @@ export default function About() {
                   className="text-xl leading-relaxed"
                   style={{ color: theme.textColor }}
                 >
-                  {userData.companyName} is a research-driven wealth management firm committed to helping 
-                  investors build sustainable long-term wealth through disciplined and logical investing.
+                  We combine deep fundamental analysis with price-trend validation (techno-funda) to create high-conviction investment baskets.
                 </p>
 
                 <p style={{ color: theme.lightText }}>
-                  It is managed by {userData.analyst.name}, a SEBI Registered Research Analyst with over 
-                  {userData.analyst.experience} of experience across Equity, Futures & Options, Currency, 
-                  and Commodity markets.
+                  Our research focuses on under-researched companies with strengthening earnings, robust balance sheets, and scalable business models—opportunities often overlooked by the broader market.
                 </p>
 
                 <div 
@@ -92,28 +89,17 @@ export default function About() {
                     className="text-2xl font-bold mb-4"
                     style={{ color: theme.textColor }}
                   >
-                    Our Leadership
+                    Our Research Philosophy
                   </h3>
                   <p style={{ color: theme.lightText }}>
-                    {userData.analyst.name} is a Research Analyst by qualification, bringing a rare blend 
-                    of financial expertise and practical market experience. His research-driven, disciplined 
-                    approach focuses on capital protection, risk management, and sustainable returns, making 
-                    him a trusted guide for investors navigating dynamic markets.
+                    Every recommendation is thoroughly documented. Risk is evaluated before return. Investment decisions are guided by data and discipline, not emotion. With timely reviews and complete transparency, we aim to make compounding a repeatable process rather than a hopeful promise.
                   </p>
                 </div>
-
-                <p style={{ color: theme.lightText }}>
-                  At {userData.companyName}, we focus on understanding each client&apos;s financial goals, 
-                  risk appetite, and time horizon before designing personalized investment solutions. 
-                  Whether markets are volatile or stable, our objective remains the same — capital protection, 
-                  steady growth, and transparency.
-                </p>
               </div>
             </div>
           </div>
         </section>
 
-        
         {/* Leadership & Qualifications with Photo */}
         <section className="py-20">
           <div className="container mx-auto px-4">
@@ -131,20 +117,16 @@ export default function About() {
                 >
                   {/* Profile Image */}
                   <div className="relative h-80 md:h-96 bg-gray-100">
-                    {/* Replace with your actual image */}
                     <div className="absolute inset-0 flex items-center justify-center">
                       <div className="relative w-64 h-64 rounded-full overflow-hidden border-4 border-white shadow-2xl">
-                        {/* Placeholder - Replace with your actual image */}
                         <Image
-                          src="/client.png" // Placeholder image
+                          src="/client.png"
                           alt={userData.analyst.name}
                           fill
                           className="object-cover"
                           sizes="(max-width: 768px) 100vw, 50vw"
                           priority
-                        >
-
-                      </Image>
+                        />
                       </div>
                     </div>
                   </div>
@@ -156,7 +138,7 @@ export default function About() {
                         className="text-2xl font-bold mb-2"
                         style={{ color: theme.textColor }}
                       >
-                        {userData.analyst.name}
+                        CA {userData.analyst.name}
                       </h2>
                       <p 
                         className="text-lg font-medium mb-1"
@@ -165,7 +147,23 @@ export default function About() {
                         SEBI Registered Research Analyst
                       </p>
                       <p style={{ color: theme.lightText }}>
-                         {userData.analyst.experience} Experience
+                        Chartered Accountant & Research Analyst
+                      </p>
+                      <p style={{ color: theme.lightText }}>
+                        {userData.analyst.experience} Experience
+                      </p>
+                    </div>
+
+                    {/* Rajat's Bio */}
+                    <div 
+                      className="mb-8 p-4 rounded-lg"
+                      style={{
+                        backgroundColor: `${theme.primaryColor}05`,
+                        border: `1px solid ${theme.primaryColor}20`,
+                      }}
+                    >
+                      <p className="text-sm italic" style={{ color: theme.lightText }}>
+                        {userData.analyst.name} is a Chartered Accountant and Research Analyst by qualification, bringing a rare blend of financial expertise and practical market experience. His research-driven, disciplined approach focuses on capital protection, risk management, and sustainable returns, making him a trusted guide for investors navigating dynamic markets.
                       </p>
                     </div>
 
@@ -220,14 +218,27 @@ export default function About() {
                         >
                           <Linkedin className="w-5 h-5" style={{ color: theme.primaryColor }} />
                         </a>
-                        {/* Add more social links as needed */}
                       </div>
                     </div>
                   </div>
                 </div>
 
                 {/* SEBI Badge */}
-                
+                <div 
+                  className="rounded-2xl p-6 text-center border"
+                  style={{
+                    backgroundColor: `${theme.primaryColor}08`,
+                    borderColor: `${theme.primaryColor}30`,
+                  }}
+                >
+                  <div className="flex items-center justify-center gap-3 mb-3">
+                    <Shield className="w-6 h-6" style={{ color: theme.primaryColor }} />
+                    <span className="font-bold" style={{ color: theme.textColor }}>SEBI Registered</span>
+                  </div>
+                  <p className="text-sm" style={{ color: theme.lightText }}>
+                    Registration No: {userData.regNumber}
+                  </p>
+                </div>
               </div>
               
               {/* Right Column - Qualifications and Details */}
@@ -245,9 +256,14 @@ export default function About() {
                   <div className="space-y-6">
                     {[
                       {
-                        title: "SEBI Registered Research Analyst",
-                        description: "Authorized to provide investment advice and research reports. Registration validated and compliant with SEBI regulations.",
+                        title: "Chartered Accountant",
+                        description: "Member of the Institute of Chartered Accountants of India (ICAI) since 2024.",
                         icon: <Award className="w-5 h-5" />
+                      },
+                      {
+                        title: "SEBI Registered Research Analyst",
+                        description: `Authorized to provide investment advice and research reports. Registration No: ${userData.regNumber}`,
+                        icon: <FileText className="w-5 h-5" />
                       },
                       {
                         title: "Market Experience",
@@ -256,7 +272,7 @@ export default function About() {
                       },
                       {
                         title: "Research Methodology",
-                        description: "Proven research-driven approach focusing on fundamental analysis, technical analysis, and risk management.",
+                        description: "Deep fundamental analysis combined with price-trend validation (techno-funda approach).",
                         icon: <BarChart3 className="w-5 h-5" />
                       }
                     ].map((item, index) => (
@@ -285,7 +301,6 @@ export default function About() {
                         </div>
                       </div>
                     ))}
-                    
                   </div>
                 </div>
 
@@ -295,18 +310,18 @@ export default function About() {
                     className="text-xl font-bold mb-6"
                     style={{ color: theme.textColor }}
                   >
-                    Areas of Expertise
+                    Research Focus Areas
                   </h3>
                   <div className="grid grid-cols-2 gap-3">
                     {[
-                      "Equity Research",
-                      "Portfolio Management",
+                      "Under-researched Companies",
+                      "Strengthening Earnings",
+                      "Robust Balance Sheets",
+                      "Scalable Business Models",
+                      "Techno-Funda Analysis",
                       "Risk Assessment",
-                      "Technical Analysis",
-                      "Fundamental Analysis",
-                      "Wealth Planning",
-                      "Tax Planning",
-                      "Retirement Planning"
+                      "Portfolio Management",
+                      "Sustainable Compounding"
                     ].map((skill, index) => (
                       <div 
                         key={index}
@@ -323,19 +338,23 @@ export default function About() {
                   </div>
                 </div>
 
+                {/* Investment Philosophy */}
                 <div 
-                  className="rounded-2xl p-6 text-center border"
+                  className="rounded-2xl p-6 border"
                   style={{
-                    backgroundColor: `${theme.primaryColor}08`,
-                    borderColor: `${theme.primaryColor}30`,
+                    backgroundColor: `${theme.primaryColor}05`,
+                    borderColor: `${theme.primaryColor}20`,
                   }}
                 >
-                  <div className="flex items-center justify-center gap-3 mb-3">
-                    <Shield className="w-6 h-6" style={{ color: theme.primaryColor }} />
-                    <span className="font-bold" style={{ color: theme.textColor }}>SEBI Registered</span>
-                  </div>
+                  <h3 
+                    className="text-lg font-bold mb-3 flex items-center gap-2"
+                    style={{ color: theme.textColor }}
+                  >
+                    <Brain className="w-5 h-5" style={{ color: theme.primaryColor }} />
+                    Our Commitment
+                  </h3>
                   <p className="text-sm" style={{ color: theme.lightText }}>
-                    Registration No: {userData.regNumber}
+                    Every recommendation is thoroughly documented. Risk is evaluated before return. Investment decisions are guided by data and discipline, not emotion.
                   </p>
                 </div>
               </div>
@@ -343,7 +362,7 @@ export default function About() {
           </div>
         </section>
 
-{/* What We Focus On */}
+        {/* What We Focus On */}
         <section className="py-20">
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">
@@ -357,31 +376,31 @@ export default function About() {
                 className="text-xl max-w-2xl mx-auto"
                 style={{ color: theme.lightText }}
               >
-                The foundation of our wealth management philosophy
+                The foundation of our institutional-quality research approach
               </p>
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
               {[
                 {
-                  title: "Research-Driven Approach",
-                  description: "All investment decisions backed by comprehensive analysis",
+                  title: "Techno-Funda Approach",
+                  description: "Deep fundamental analysis combined with price-trend validation",
                   icon: <BarChart3 className="w-6 h-6" />,
                 },
                 {
-                  title: "Capital Protection",
-                  description: "Risk management as the foundation of all strategies",
+                  title: "Risk-First Mindset",
+                  description: "Risk evaluation before return in every investment decision",
                   icon: <Shield className="w-6 h-6" />,
                 },
                 {
-                  title: "Disciplined Investing",
-                  description: "Logical, systematic approach to wealth creation",
+                  title: "Data-Driven Discipline",
+                  description: "Investment decisions guided by data, not emotion",
                   icon: <Brain className="w-6 h-6" />,
                 },
                 {
-                  title: "Sustainable Growth",
-                  description: "Focus on long-term, steady wealth building",
-                  icon: <TrendingUp className="w-6 h-6" />,
+                  title: "Under-researched Gems",
+                  description: "Focus on overlooked companies with strong fundamentals",
+                  icon: <Eye className="w-6 h-6" />,
                 }
               ].map((item, index) => (
                 <div 
@@ -429,26 +448,26 @@ export default function About() {
                 className="max-w-2xl mx-auto"
                 style={{ color: theme.lightText }}
               >
-                A disciplined framework for sustainable wealth creation
+                Making compounding a repeatable process rather than a hopeful promise
               </p>
             </div>
 
             <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
               {[
                 {
-                  title: "Goal-Based Planning",
-                  description: "Understanding each client's financial objectives, time horizon, and risk tolerance before designing investment strategies.",
+                  title: "High-Conviction Baskets",
+                  description: "Creating investment baskets based on thorough research and price-trend validation for high conviction investments.",
                   icon: <TargetIcon className="w-8 h-8" />
                 },
                 {
-                  title: "Risk Management First",
-                  description: "Capital protection as the primary objective, with all investments structured around appropriate risk controls.",
-                  icon: <Shield className="w-8 h-8" />
+                  title: "Complete Transparency",
+                  description: "Every recommendation thoroughly documented with timely reviews and clear communication.",
+                  icon: <BookOpen className="w-8 h-8" />
                 },
                 {
-                  title: "Research-Backed Decisions",
-                  description: "Every investment recommendation supported by thorough analysis of fundamentals, valuations, and market trends.",
-                  icon: <Brain className="w-8 h-8" />
+                  title: "Institutional Quality Research",
+                  description: "Delivering institutional-grade research focused on under-researched companies with scalable business models.",
+                  icon: <BarChart3 className="w-8 h-8" />
                 }
               ].map((item, index) => (
                 <div 
@@ -492,16 +511,15 @@ export default function About() {
                 className="w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6"
                 style={{ backgroundColor: "rgba(255,255,255,0.2)" }}
               >
-                <Eye className="w-10 h-10" />
+                <Target className="w-10 h-10" />
               </div>
               
               <h2 className="text-3xl lg:text-4xl font-bold mb-6">
-                Ready for Research-Driven Wealth Management?
+                Ready for Institutional-Quality Research?
               </h2>
               
               <p className="text-xl mb-8 opacity-90">
-                Connect with a SEBI Registered Research Analyst for disciplined, 
-                sustainable wealth creation
+                Connect with CA {userData.analyst.name}, a SEBI Registered Research Analyst and Chartered Accountant, for disciplined, sustainable wealth creation
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -520,12 +538,12 @@ export default function About() {
                   href="/services"
                   className="inline-block px-8 py-4 bg-transparent border-2 border-white/30 text-white rounded-xl font-semibold hover:bg-white/10 transition-all duration-300"
                 >
-                  Explore Our Services
+                  Explore Our Research
                 </a>
               </div>
               
               <p className="mt-8 text-sm opacity-80">
-                SEBI Registration: {userData.regNumber} • Managed by: {userData.analyst.name}
+                SEBI Registration: {userData.regNumber} • Managed by: CA {userData.analyst.name}
               </p>
             </div>
           </div>

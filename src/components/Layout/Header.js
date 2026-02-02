@@ -30,8 +30,31 @@ const Header = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  
   return (
     <> 
+   <style jsx>{`
+  @keyframes pulseZoom {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.08);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  .cta-pulse {
+    animation: pulseZoom 2.5s ease-in-out infinite;
+  }
+
+  .cta-pulse:hover {
+    animation-play-state: paused;
+  }
+`}</style>
+
       <header
         style={{
           fontFamily: theme.fontFamily,
@@ -133,21 +156,25 @@ const Header = () => {
               ))}
               
               {/* Contact Button */}
-              <Link
-                href="/contact"
-                style={{
-                  background: `linear-gradient(135deg, ${theme.primaryColor} 0%, ${theme.secondaryColor} 100%)`,
-                  color: "white",
-                  fontWeight: 600,
-                  borderRadius: theme.borderRadius,
-                  marginLeft: "1rem",
-                  boxShadow: `0 4px 20px ${theme.primaryColor}30`,
-                }}
-                className="px-6 py-2.5 flex items-center gap-2 hover:opacity-90 hover:scale-105 transition-all duration-300"
-              >
-                <Phone className="w-4 h-4" />
-                Contact Us
-              </Link>
+     <Link
+  href="/contact"
+  style={{
+    background: `linear-gradient(135deg, ${theme.primaryColor} 0%, ${theme.secondaryColor} 100%)`,
+    color: "white",
+    fontWeight: 600,
+    borderRadius: theme.borderRadius,
+    marginLeft: "1rem",
+    boxShadow: `0 4px 20px ${theme.primaryColor}30`,
+  }}
+  className="px-6 py-2.5 flex items-center gap-2 hover:opacity-90 transition-all duration-300"
+>
+  <span className="cta-pulse flex items-center gap-2">
+    <Phone className="w-4 h-4" />
+    Contact Us
+  </span>
+</Link>
+
+
             </nav>
 
             {/* Mobile Menu Button */}

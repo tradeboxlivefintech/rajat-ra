@@ -114,17 +114,18 @@ export const userData = {
   // Social Links
   social: {
     linkedin: "",
-    twitter: "",
-    instagram: "",
-    youtube: ""
+    twitter: "https://x.com/rajatbishtrb",
+    instagram: "https://www.instagram.com/tradelogy_wealth/",
+    youtube: "",
+    instagram:"https://www.instagram.com/tradelogy_wealth/"
   },
   
   // Compliance Information
   compliance: {
     officer: {
-      name: "Gopal Singh",
-      email: "gopal12singhbisht@gmail.com",
-      phone: "+91 9013394300"
+      name: "Bhuwan Bisht",
+      email: "Bhuwanbi@gmail.com",
+      phone: "8178330390"
     },
     // grievance: {
     //   name: "Arun Mehta",
