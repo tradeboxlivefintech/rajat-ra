@@ -15,7 +15,7 @@ export default function Blog() {
       excerpt:
         "Explore proven approaches to navigate market fluctuations while maintaining focus on long-term investment objectives and risk management principles.",
       category: "Investment Strategy",
-      date: "Feb 12, 2024",
+      date: "Jan 4, 2026",
       readTime: "5 min read"
     },
     {
@@ -24,7 +24,7 @@ export default function Blog() {
       excerpt:
         "Analysis of pharmaceutical industry trends, regulatory developments, and innovation pipelines shaping investment opportunities in healthcare.",
       category: "Sector Analysis",
-      date: "Feb 8, 2024",
+      date: "Feb 8, 2026",
       readTime: "7 min read"
     },
     {
@@ -33,7 +33,7 @@ export default function Blog() {
       excerpt:
         "Comprehensive framework for retirement planning including asset allocation, withdrawal strategies, and tax-efficient income planning.",
       category: "Wealth Planning",
-      date: "Feb 5, 2024",
+      date: "Feb 5, 2026",
       readTime: "6 min read"
     },
     {
@@ -42,7 +42,7 @@ export default function Blog() {
       excerpt:
         "Examination of renewable energy sector growth drivers, policy support, and technological advancements creating investment opportunities.",
       category: "Sustainable Investing",
-      date: "Jan 28, 2024",
+      date: "Jan 28, 2026",
       readTime: "8 min read"
     },
     {
@@ -51,7 +51,7 @@ export default function Blog() {
       excerpt:
         "Guide to evaluating corporate governance practices and their impact on company performance and investment decisions.",
       category: "Fundamental Analysis",
-      date: "Jan 22, 2024",
+      date: "Jan 22, 2026",
       readTime: "5 min read"
     },
     {
@@ -60,7 +60,7 @@ export default function Blog() {
       excerpt:
         "Analysis of fixed income opportunities, yield curve dynamics, and credit risk assessment in changing interest rate environment.",
       category: "Fixed Income",
-      date: "Jan 18, 2024",
+      date: "Jan 18, 2026",
       readTime: "6 min read"
     }
   ];

@@ -421,7 +421,6 @@ const Testimonials = () => {
             }}
           />
         </div>
-       
 
         {/* Disclaimer Note */}
         <div 
