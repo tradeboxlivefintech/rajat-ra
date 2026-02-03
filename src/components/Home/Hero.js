@@ -8,7 +8,7 @@ const Hero = () => {
   const theme = useTheme();
 
   return (
-    <section className="relative min-h-screen flex items-center pt-16 overflow-hidden">
+    <section className="relative min-h-screen flex items-center  overflow-hidden">
       {/* Background */}
       <div 
         className="absolute inset-0"
@@ -16,7 +16,6 @@ const Hero = () => {
           background: theme.backgroundGradient,
         }}
       />
-      
       {/* Subtle background pattern */}
       <div className="absolute inset-0 opacity-5">
         <div 
@@ -122,7 +121,7 @@ const Hero = () => {
                 Explore Research Reports
               </Link>
               <Link
-                href="/contact"
+                href="/services"
                 className="px-8 py-4 rounded-xl font-semibold text-center transition-all duration-300 border-2"
                 style={{
                   backgroundColor: theme.background,
@@ -130,7 +129,7 @@ const Hero = () => {
                   borderColor: theme.borderColor,
                 }}
               >
-                Book Free Consultation
+               View All Services
               </Link>
             </div>
           </div>
@@ -228,53 +227,9 @@ const Hero = () => {
               </div>
 
               {/* Floating Elements */}
-              <div 
-                className="absolute -top-4 -right-4 p-4 rounded-xl border"
-                style={{
-                  backgroundColor: theme.background,
-                  borderColor: theme.borderColor,
-                  boxShadow: `0 10px 30px ${theme.primaryColor}10`,
-                }}
-              >
-                <div className="text-center">
-                  <div 
-                    className="text-2xl font-bold"
-                    style={{ color: theme.primaryColor }}
-                  >
-                    500+
-                  </div>
-                  <div 
-                    className="text-sm"
-                    style={{ color: theme.lightText }}
-                  >
-                    Research Reports
-                  </div>
-                </div>
-              </div>
+              
 
-              <div 
-                className="absolute -bottom-4 -left-4 p-4 rounded-xl border"
-                style={{
-                  backgroundColor: theme.background,
-                  borderColor: theme.borderColor,
-                  boxShadow: `0 10px 30px ${theme.secondaryColor}10`,
-                }}
-              >
-                <div className="text-center">
-                  <div 
-                    className="text-2xl font-bold"
-                    style={{ color: theme.secondaryColor }}
-                  >
-                    250+
-                  </div>
-                  <div 
-                    className="text-sm"
-                    style={{ color: theme.lightText }}
-                  >
-                    Clients Served
-                  </div>
-                </div>
-              </div>
+             
             </div>
           </div>
         </div>
