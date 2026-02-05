@@ -465,7 +465,7 @@ export default function Services() {
                         <h4 
                           className="font-semibold mb-3 flex items-center gap-2"
                           style={{ color: theme.textColor }}
-                        >
+                        > 
                           <BarChart3 className="w-4 h-4" style={{ color: theme.primaryColor }} />
                           Strategies Used:
                         </h4>
@@ -521,24 +521,7 @@ export default function Services() {
                             </p>
                             
                             {/* Purchase Button for Each Plan */}
-                            <a
-                              href={`${purchaseLinks[service.id]}?plan=${plan.validity.toLowerCase().replace(' ', '-')}`}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className={`w-full py-2 rounded-lg font-medium text-sm transition-all duration-300 flex items-center justify-center gap-2 ${
-                                plan.popular 
-                                  ? 'hover:opacity-90' 
-                                  : 'hover:bg-gray-100 dark:hover:bg-gray-800'
-                              }`}
-                              style={{
-                                backgroundColor: plan.popular ? 'white' : 'white',
-                                color: plan.popular ? theme.primaryColor : theme.primaryColor,
-                                border: plan.popular ? `1px solid ${theme.primaryColor}50` : `1px solid ${theme.primaryColor}50`,
-                              }}
-                            >
-                              Purchase
-                              <ArrowRight className="w-3 h-3" />
-                            </a>
+                            
                           </div>
                         ))}
                       </div>
