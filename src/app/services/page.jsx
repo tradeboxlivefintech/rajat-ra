@@ -345,14 +345,7 @@ export default function Services() {
                     
                     {/* Service Icon */}
                     <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">
-                      <div 
-                        className="w-20 h-20 rounded-2xl flex items-center justify-center backdrop-blur-sm border-2 border-white/20 shadow-2xl"
-                        style={{
-                          background: `linear-gradient(135deg, ${theme.primaryColor}50 0%, ${theme.secondaryColor}50 100%)`,
-                        }}
-                      >
-                        {serviceIcons[index] || <BarChart3 className="w-10 h-10 text-white" />}
-                      </div>
+                      
                     </div>
                     
                     {/* Segment and Risk Badges */}
@@ -380,17 +373,7 @@ export default function Services() {
                     </div>
                     
                     {/* Tagline at Bottom */}
-                    <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2">
-                      <span 
-                        className="px-4 py-2 rounded-full text-sm font-medium backdrop-blur-md border border-white/20"
-                        style={{
-                          backgroundColor: `${theme.background}90`,
-                          color: theme.primaryColor,
-                        }}
-                      >
-                        {service.tagline}
-                      </span>
-                    </div>
+                    
                   </div>
 
                   {/* Service Content */}
@@ -520,26 +503,13 @@ export default function Services() {
                             className={`p-4 rounded-xl text-center transition-all duration-300 hover:shadow-lg relative ${
                               plan.popular ? 'border-2' : 'border'
                             }`}
-                            style={{
-                              backgroundColor: plan.popular ? `${theme.primaryColor}10` : `${theme.primaryColor}05`,
-                              borderColor: plan.popular ? theme.primaryColor : `${theme.primaryColor}20`,
-                              boxShadow: plan.popular ? `0 4px 20px ${theme.primaryColor}20` : 'none',
-                            }}
+                           
                           >
-                            {plan.popular && (
+                            
                               <div className="absolute -top-2 left-1/2 transform -translate-x-1/2">
-                                <span 
-                                  className="px-3 py-1 rounded-full text-xs font-bold flex items-center gap-1"
-                                  style={{
-                                    backgroundColor: theme.primaryColor,
-                                    color: 'white',
-                                  }}
-                                >
-                                  <Crown className="w-3 h-3" />
-                                  POPULAR
-                                </span>
+                                
                               </div>
-                            )}
+                            )
                             <p className="text-sm mb-1" style={{ color: theme.lightText }}>
                               {plan.validity}
                             </p>
@@ -561,9 +531,9 @@ export default function Services() {
                                   : 'hover:bg-gray-100 dark:hover:bg-gray-800'
                               }`}
                               style={{
-                                backgroundColor: plan.popular ? theme.primaryColor : 'transparent',
-                                color: plan.popular ? 'white' : theme.primaryColor,
-                                border: plan.popular ? 'none' : `1px solid ${theme.primaryColor}50`,
+                                backgroundColor: plan.popular ? 'white' : 'white',
+                                color: plan.popular ? theme.primaryColor : theme.primaryColor,
+                                border: plan.popular ? `1px solid ${theme.primaryColor}50` : `1px solid ${theme.primaryColor}50`,
                               }}
                             >
                               Purchase
