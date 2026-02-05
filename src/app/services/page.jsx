@@ -509,7 +509,7 @@ export default function Services() {
                               <div className="absolute -top-2 left-1/2 transform -translate-x-1/2">
                                 
                               </div>
-                            )
+                            
                             <p className="text-sm mb-1" style={{ color: theme.lightText }}>
                               {plan.validity}
                             </p>
